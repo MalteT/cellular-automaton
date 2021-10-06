@@ -25,7 +25,7 @@
         '';
 
         serve = pkgs.writeScriptBin "serve" ''
-          ${pkgs.trunk}/bin/trunk serve --dist docs
+          ${pkgs.trunk}/bin/trunk serve
         '';
 
       in {
