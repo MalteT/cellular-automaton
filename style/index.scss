@@ -1,3 +1,4 @@
+$but-border: 1px solid #fe8019;
 
 html, body, canvas {
   width: 100%;
@@ -9,6 +10,70 @@ html, body, canvas {
 
 canvas {
   position: absolute;
+}
+
+button#toggle-settings {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: 5;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: url("/static/settings.svg");
+  cursor: pointer;
+}
+
+div#settings {
+  position: absolute;
+  left: 3px;
+  top: 40px;
+  z-index: 5;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  border: $but-border;
+  border-radius: 5px;
+  background-color: #00000080;
+}
+
+button#auto-zoom {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: url("/static/auto-zoom.svg");
+  cursor: pointer;
+  border-bottom: $but-border;
+  border-right: $but-border;
+}
+
+button#auto-run {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  border-bottom: $but-border;
+  border-right: $but-border;
+  border-bottom-right-radius: 5px;
+}
+
+button#auto-run.auto-run-on {
+  background: url("/static/auto-run-on.svg");
+}
+
+button#auto-run.auto-run-off {
+  background: url("/static/auto-run-off.svg");
 }
 
 .over {

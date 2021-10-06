@@ -20,18 +20,28 @@
             targets = [ "wasm32-unknown-unknown" ];
           });
 
+        update-artifacts = pkgs.writeScriptBin "update-artifacts" ''
+          ${pkgs.trunk}/bin/trunk build --release --dist docs --public-url /cellular-automaton
+        '';
+
+        serve = pkgs.writeScriptBin "serve" ''
+          ${pkgs.trunk}/bin/trunk serve --dist docs
+        '';
+
       in {
         # `nix develop`
         devShell = pkgs.mkShell rec {
           # supply the specific rust version
           nativeBuildInputs = [
             pkgs.cargo-readme
+            pkgs.gcc
             pkgs.miniserve
             pkgs.trunk
             pkgs.wasm-bindgen-cli
             pkgs.wasm-pack
-            pkgs.gcc
             rust
+            serve
+            update-artifacts
           ];
           RUST_SRC_PATH = "${rust}";
           RUST_ANALYZER = "${rust}/bin/rust-analyzer";
