@@ -23,7 +23,7 @@ button#toggle-settings {
   margin: 0;
   padding: 0;
   border: none;
-  background: url("static/settings.svg");
+  background: url("./static/settings.svg");
   cursor: pointer;
 }
 
@@ -49,7 +49,7 @@ button#auto-zoom {
   margin: 0;
   padding: 0;
   border: none;
-  background: url("static/auto-zoom.svg");
+  background: url("./static/auto-zoom.svg");
   cursor: pointer;
   border-bottom: $but-border;
   border-right: $but-border;
@@ -69,11 +69,11 @@ button#auto-run {
 }
 
 button#auto-run.auto-run-on {
-  background: url("static/auto-run-on.svg");
+  background: url("./static/auto-run-on.svg");
 }
 
 button#auto-run.auto-run-off {
-  background: url("static/auto-run-off.svg");
+  background: url("./static/auto-run-off.svg");
 }
 
 .over {
